@@ -1,0 +1,32 @@
+.hero-video-div {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top:0;
+  z-index: -1;
+  filter: blur(2px);
+}
+
+.hv-h1 {
+  position: absolute;
+  font-size: 5em;
+  color: gainsboro;
+  top:45%;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .hv-h1 {
+    left: 0.2em;
+    font-size: 4em;
+  }
+}
