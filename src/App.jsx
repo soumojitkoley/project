@@ -5,6 +5,7 @@ import HeroVideo from './components/HeroVideo'
 import Footer from './components/Footer'
 import { useMediaQuery } from 'react-responsive';
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
+import { Fade } from 'react-awesome-reveal'
 
 import LocomotiveScroll from 'locomotive-scroll';
 
@@ -36,9 +37,9 @@ function App() {
         className="parallax-section"
       >
         <div className="parallax-overlay"></div>
-        <Parallax speed={20}>
-          <h2>Thinking of you keeps me awake. Dreaming of you keeps me asleep. <br /> Being with you keeps me alive.</h2>
-        </Parallax>
+        {/* <Parallax speed={20}> */}
+        <Fade className='gg' speed={500} cascade damping={0.1}>{"Thinking of you keeps me awake. Dreaming of you keeps me asleep.\nBeing with you keeps me alive."}</Fade>
+        {/* </Parallax> */}
       </ParallaxBanner>
       ) : (<div className='bg1'>
           <h2>Thinking of you keeps me awake. Dreaming of you keeps me asleep. <br /> Being with you keeps me alive.</h2>

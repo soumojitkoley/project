@@ -1,10 +1,11 @@
 .slider-div {
-  height: 35em;
+  height: 45em;
   width: 100%;
   padding-top: 2em;
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 1em;
+  overflow: hidden;
 }
 
 .s-h1{
@@ -15,18 +16,21 @@
 }
 
 .mySwiper{
+  height: 40em;
+  width: 100%;
   border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid transparent;
 }
 
-img {
-  height: 30em;
+.mySwiper img {
+  height: 40em;
   width: 100%;
   transition: transform 0.5s ease;
-  border-radius: 20px;
 }
 
-img:hover {
-  transform: scale(1.1);
+.mySwiper img:hover {
+  transform: scale(1.05);
 }
 
 

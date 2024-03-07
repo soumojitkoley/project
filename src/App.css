@@ -35,8 +35,6 @@
   width: 100%;
   background-size: cover;
   background-position: center;
-  /* background-attachment: fixed; */
-  /* overflow: hidden; */
   position: relative;
   text-align: center;
   display: flex;
@@ -48,4 +46,9 @@
 
 .bg1 h2{
   padding: 1em;
+}
+
+.gg{
+  font-size: 1.5em;
+  /* margin: 0em 4em; */
 }
