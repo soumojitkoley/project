@@ -44,7 +44,7 @@ const Slider = () => {
           </SwiperSlide>
           <SwiperSlide>
             {/* <Zoom> */}
-            <img src="https://source.unsplash.com/random/600*200?pre-wedding" alt="" data-swiper-parallax="-500" />
+            <img src="https://source.unsplash.com/random/600*200?couple" alt="" data-swiper-parallax="-500" />
             {/* </Zoom> */}
           </SwiperSlide>
           <SwiperSlide>
@@ -54,7 +54,7 @@ const Slider = () => {
           </SwiperSlide>
           <SwiperSlide>
             {/* <Zoom> */}
-            <img src="https://source.unsplash.com/random/600*200?wedding,event" alt="" data-swiper-parallax="-500" />
+            <img src="https://source.unsplash.com/random/600*200?love" alt="" data-swiper-parallax="-500" />
             {/* </Zoom> */}
           </SwiperSlide>
         </Swiper>

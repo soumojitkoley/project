@@ -7,6 +7,7 @@
 
 body{
   background-color: #242424;
+  overflow:hidden;
 }
 
 .overflow-hidden {
@@ -15,7 +16,7 @@ body{
 
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0;
 }
 
 /* Track */
@@ -32,4 +33,10 @@ body{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+@media only screen and (max-width: 768px) {
+  body{
+    overflow: visible;
+  }
 }

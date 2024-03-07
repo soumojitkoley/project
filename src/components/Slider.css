@@ -1,13 +1,17 @@
 .slider-div {
-  height: 50vh;
+  height: 35em;
   width: 100%;
-  padding: 2em;
+  padding-top: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-bottom: 1em;
 }
 
 .s-h1{
   text-align: center;
   padding-top: 1em;
   color: #fff;
+  z-index: -1;
 }
 
 .mySwiper{
@@ -45,7 +49,6 @@ img:hover {
   background-color: #ffffff;
 }
 
-
 @media only screen and (max-width: 768px) {
 
   .swiper-button-prev,
@@ -54,6 +57,9 @@ img:hover {
   }
 
   .slider-div {
-    padding: 1em;
+    padding-top: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0em;
   }
 }

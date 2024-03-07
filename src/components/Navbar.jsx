@@ -2,13 +2,28 @@ import React from 'react';
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Fade } from 'react-awesome-reveal'
+import { Fade, Slide } from 'react-awesome-reveal'
 
 const Navbar = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 80) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleMenuToggle = () => {
     setMenuOpen(!isMenuOpen);
@@ -20,11 +35,10 @@ const Navbar = () => {
     }
   };
 
-
   return (
-    <div className="navbar">
+    <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
       <div className="logo">
-        <img src="logo/original.png" alt="" />
+        <Slide direction='left'><h2>IT & VFX Solution</h2></Slide>
       </div>
 
       {isMobile ? (

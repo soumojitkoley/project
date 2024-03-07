@@ -10,20 +10,65 @@ video {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  position: absolute;
-  top:0;
   z-index: -1;
-  filter: blur(2px);
+  filter: blur(0.5px);
 }
 
 .hv-h1 {
   position: absolute;
   font-size: 5em;
-  color: gainsboro;
+  color: #fff;
   top:45%;
+  transition: opacity 3s ease;
+  opacity: 0;
+}
+
+.hv-h1.show {
+  opacity: 1; /* Transition to opacity 1 when the show class is applied */
+}
+
+.mouse {
+  z-index: 1;
+  bottom: 1em;
+	width: 30px;
+	height: 50px;
+	border: 2px solid rgba(255, 255, 255, .5);
+	border-radius: 60px;
+	position: absolute;
+	&::before {
+		content: '';
+		width: 5px;
+		height: 5px;
+		position: absolute;
+		bottom : 0;
+		top: 40px;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: rgba(255, 255, 255, .5);
+		border-radius: 50%;
+		opacity: 0;
+		animation: wheel 2s infinite;
+		-webkit-animation: wheel 2s infinite;
+	}
+}
+
+@keyframes wheel {
+	to {
+		opacity: 1;
+		top: 10px;
+	}
 }
 
 @media only screen and (max-width: 768px) {
+
+  .hero-video-div {
+    height: 100vh;
+  }
+  video {
+    height: 110%;
+    position: absolute;
+    top:0;
+  }
 
   .hv-h1 {
     left: 0.2em;
