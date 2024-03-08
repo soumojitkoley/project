@@ -1,16 +1,17 @@
 .slider-div {
-  height: 45em;
+  height: auto;
   width: 100%;
-  padding-top: 2em;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-bottom: 1em;
-  overflow: hidden;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  gap:2em;
+  /* overflow: hidden; */
 }
 
 .s-h1{
   text-align: center;
-  padding-top: 1em;
   color: #fff;
   z-index: -1;
 }
@@ -18,7 +19,7 @@
 .mySwiper{
   height: 40em;
   width: 100%;
-  border-radius: 25px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid transparent;
 }
@@ -53,17 +54,22 @@
   background-color: #ffffff;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
 
   .swiper-button-prev,
   .swiper-button-next {
     display: none !important;
   }
 
+  .mySwiper,
+  .mySwiper img{
+    height: 20em;
+  }
+
   .slider-div {
-    padding-top: 2em;
     padding-left: 1em;
     padding-right: 1em;
-    padding-bottom: 0em;
+    padding-top: 1em;
+    gap:1em;
   }
 }

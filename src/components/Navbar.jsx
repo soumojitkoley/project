@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Fade, Slide } from 'react-awesome-reveal'
 
 const Navbar = () => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useMediaQuery({ maxWidth: 1025 });
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
 
@@ -43,6 +43,7 @@ const Navbar = () => {
 
       {isMobile ? (
         <div className='hello'>
+          <Fade direction='right'>
           <div className="ham">
             <label class="hamburger ham">
               <input className="checkbox-class" type="checkbox" checked={isMenuOpen} readOnly onClick={handleMenuToggle} />
@@ -52,6 +53,7 @@ const Navbar = () => {
               </svg>
             </label>
           </div>
+          </Fade>
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div key={isMenuOpen ? 'menu-open' : 'menu-closed'} className={'fullnav-mob'} data-visible="true"
@@ -86,7 +88,7 @@ const Navbar = () => {
           </AnimatePresence>
         </div>
       ) : (
-        <Fade direction='right'>
+        <Fade direction='right' cascade>
           <div className="nav-menu">
             <ul type="none" className="list">
               <li>
