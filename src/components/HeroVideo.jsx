@@ -18,7 +18,7 @@ const HeroVideo = () => {
     if (inView) {
       const timer = setTimeout(() => {
         setShowHeading(true);
-      }, 1500);
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [inView]);
@@ -44,29 +44,11 @@ const HeroVideo = () => {
         </Fade>
       </h1>
       ):(
-        <h1 className={`hv-h1 ${showHeading ? 'show' : ''}`}>
-          <div className="part-1">
-          <span data-scroll data-scroll-speed="3.0">W</span>
-          <span data-scroll data-scroll-speed="2.8">e</span>
-          <span data-scroll data-scroll-speed="2.6">l</span>
-          <span data-scroll data-scroll-speed="2.4">c</span>
-          <span data-scroll data-scroll-speed="2.2">o</span>
-          <span data-scroll data-scroll-speed="2">m</span>
-          <span data-scroll data-scroll-speed="1.8">e</span>
-          <span className='space1' data-scroll data-scroll-speed="1.6">t</span>
-          <span data-scroll data-scroll-speed="1.4">o</span>
-          </div>
-          <div className="part-2">
-            {/* <span className='gold' data-scroll data-scroll-speed="0.8">IT & VF</span> */}
-            <span className={`gold`}  data-scroll data-scroll-speed="1.2">I</span>
-            <span className={`gold`}  data-scroll data-scroll-speed="1">T</span>
-            <span className={`gold space`}  data-scroll data-scroll-speed="0.8">&</span>
-            <span className={`gold`}  data-scroll data-scroll-speed="0.6">V</span>
-            <span className={`gold`}  data-scroll data-scroll-speed="0.4">F</span>
-            <div data-scroll data-scroll-speed="0.2">
-              <Flip delay={2000} triggerOnce={true}><span className={`gold`}  >X</span></Flip>
-            </div>
-            
+        <h1 className={`hv-h1 ${showHeading ? 'show' : ''}`} data-scroll>
+          <span data-scroll data-scroll-speed='1'>Welcome to</span>
+          <div className="part-2" data-scroll data-scroll-speed='0.5'>
+            <span className='gold'>IT & VF</span>
+            <Flip delay={1500} triggerOnce={true}><span className='gold'>X</span></Flip>
           </div>
       </h1>
       )}
