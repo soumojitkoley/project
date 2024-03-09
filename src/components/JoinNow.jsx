@@ -1,7 +1,6 @@
 import React from 'react'
 import './JoinNow.css'
 import { Fade } from 'react-awesome-reveal'
-
 import LocomotiveScroll from 'locomotive-scroll';
 
 const locomotiveScroll = new LocomotiveScroll();
@@ -11,7 +10,7 @@ const JoinNow = () => {
     <div className='join-main-div'>
       <Fade delay={500} direction='left' duration={1500}>
         <div className="image-part" data-scroll>
-          <img data-scroll src="https://images.unsplash.com/photo-1682685797527-63b4e495938f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
+          <img data-scroll src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" />
         </div>
       </Fade>
       <Fade delay={500} direction='right' duration={1500}>

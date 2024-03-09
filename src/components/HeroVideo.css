@@ -6,6 +6,17 @@
   align-items: center;
 }
 
+.animated-x {
+	display: inline-block;
+	opacity: 0;
+	animation: fadeInX 1s ease forwards;
+  }
+  
+  @keyframes fadeInX {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+  }
+
 video {
   height: 100%;
   width: 100%;
@@ -23,6 +34,31 @@ video {
   opacity: 0;
   display: flex;
   gap: 0.3em;
+}
+
+.x{
+	opacity: 0;
+	transition: opacity 3s ease;
+}
+
+.x.show {
+	opacity: 1; /* Transition to opacity 1 when the show class is applied */
+  }
+
+.part-1,
+.part-2{
+	display: flex;
+	gap:2px;
+	justify-content: center;
+	align-items: center;
+}
+
+.space1{
+	padding-left: 25px;
+}
+
+.space{
+	padding: 0em 15px;
 }
 
 .gold{

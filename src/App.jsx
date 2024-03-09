@@ -7,6 +7,7 @@ import JoinNow from './components/JoinNow'
 import { useMediaQuery } from 'react-responsive';
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import { Fade } from 'react-awesome-reveal'
+import { Routes ,Route } from 'react-router-dom'
 
 
 import LocomotiveScroll from 'locomotive-scroll';

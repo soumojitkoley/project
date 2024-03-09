@@ -116,19 +116,19 @@ const Navbar = () => {
           <div className="nav-menu">
             <ul type="none" className="list">
               <li>
-                {/* <NavLink to="/" className="link"> */}
+                <NavLink to="/" className="link">
                 Home
-                {/* </NavLink> */}
+                </NavLink>
               </li>
               <li>
-                {/* <NavLink to="/about" className="link"> */}
+                <NavLink to="/about" className="link">
                 About
-                {/* </NavLink> */}
+                </NavLink>
               </li>
               <li>
-                {/* <NavLink to="/contact" className="link"> */}
+                <NavLink to="/contact" className="link">
                 Contact
-                {/* </NavLink> */}
+                </NavLink>
               </li>
             </ul>
           </div>

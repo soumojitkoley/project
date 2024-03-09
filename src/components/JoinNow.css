@@ -96,6 +96,13 @@
 @media only screen and (max-width: 768px) {
   .join-main-div {
     flex-direction: column;
+    padding: 1em;
   }
   
+  .image-part,
+  .apply-part,
+  .image-part img{
+    height: 400px;
+    width: 350px;
+  }
 }
