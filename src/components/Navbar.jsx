@@ -34,10 +34,6 @@ const Navbar = () => {
     };
   }, [lastScrollTop]);
 
-
-
-
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 80) {

@@ -1,5 +1,101 @@
-.join-main-div{
-    width: 100%;
-    height: 20em;
-    background-color: aliceblue;
+.join-main-div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2em 1em;
+}
+
+.image-part {
+  width: 600px;
+  height: 500px;
+}
+
+.image-part img {
+  max-width: 600px;
+  max-height: 500px;
+  width: 600px;
+  height: 500px;
+
+}
+
+.apply-part {
+  width: 600px;
+  height: 500px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  align-items: flex-start;
+  padding: 2em;
+}
+
+.h1-jn {
+  font-size: 64px;
+}
+
+.p-jn {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.underline {
+  width: 10em;
+  height: 2px;
+  background-color: black;
+}
+
+
+/* apply button */
+
+.swipe {
+  position: relative;
+  background-color: #F1F7F7;
+  width: 220px;
+  height: 60px;
+  color: #141414;
+  border-radius: 60px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  letter-spacing: 2px;
+  padding-left: 40px;
+  cursor: pointer;
+  transition: 0.6s ease;
+}
+
+.swipe:hover {
+  padding-left: 0;
+  padding-right: 40px;
+}
+
+.container {
+  position: absolute;
+  left: 5px;
+  width: 50px;
+  height: 50px;
+  background: #141414;
+  border-radius: 50%;
+  transition: 0.6s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f1f4f7;
+}
+
+.swipe:hover .container {
+  left: calc(100% - 55px);
+  color: #fff;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .join-main-div {
+    flex-direction: column;
+  }
+  
 }

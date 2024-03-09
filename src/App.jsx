@@ -23,12 +23,12 @@ function App() {
       <Navbar/>
       <HeroVideo/>
       {!isMobile ? (
-        <div className='bg1' id="target">
+        <div className='bg1' id="target" data-scroll>
           <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you keeps me awake.\nDreaming of you keeps me asleep.\nBeing with you keeps me alive."}</Fade>
         </div>
         )
         : (
-        <div className='bg1' id="targetElementm">
+        <div className='bg1' id="targetElementm" data-scroll>
           <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you\nkeeps me awake.\nDreaming of you\nkeeps me asleep.\nBeing with you\nkeeps me alive."}</Fade>
         </div>)
       }
