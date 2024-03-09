@@ -3,9 +3,11 @@ import Slider from './components/Slider'
 import Navbar from './components/Navbar'
 import HeroVideo from './components/HeroVideo'
 import Footer from './components/Footer'
+import JoinNow from './components/JoinNow'
 import { useMediaQuery } from 'react-responsive';
 import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import { Fade } from 'react-awesome-reveal'
+
 
 import LocomotiveScroll from 'locomotive-scroll';
 
@@ -13,21 +15,20 @@ const locomotiveScroll = new LocomotiveScroll();
 
 
 function App() {
+
   const isMobile = useMediaQuery({ maxWidth: 1025 });
-  const backgroundImage = !isMobile
-    ? 'https://images.unsplash.com/photo-1501631259223-89d4e246ed23?q=80&w=1782&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-    : 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
   return (
-    <div className='app-main-div'>
+    <div className='app-main-div' data-scroll-container>
       <Navbar/>
       <HeroVideo/>
       {!isMobile ? (
-        <div className='bg1'>
+        <div className='bg1' id="target">
           <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you keeps me awake.\nDreaming of you keeps me asleep.\nBeing with you keeps me alive."}</Fade>
-        </div>)
+        </div>
+        )
         : (
-        <div className='bg1'>
+        <div className='bg1' id="targetElementm">
           <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you\nkeeps me awake.\nDreaming of you\nkeeps me asleep.\nBeing with you\nkeeps me alive."}</Fade>
         </div>)
       }
@@ -52,6 +53,7 @@ function App() {
       </div>)} */}
       
       <Slider/>
+      <JoinNow/>
       <Footer />
     </div>
   )

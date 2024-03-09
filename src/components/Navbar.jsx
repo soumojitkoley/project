@@ -11,6 +11,33 @@ const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
 
+  const [scrollDirection, setScrollDirection] = useState('none');
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollTop = window.pageYOffset;
+
+      if (currentScrollTop > lastScrollTop) {
+        setScrollDirection('down');
+      } else {
+        setScrollDirection('up');
+      }
+
+      setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollTop]);
+
+
+
+
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 80) {
@@ -36,14 +63,15 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
+    // <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
+    <div className={`navbar ${scrollDirection === 'down' && 'hidden'} ${scrolling ? 'scrolled' : ''}`}>
       <div className="logo">
-        <Slide direction='left'><h2>IT & VFX Solution</h2></Slide>
+        <Slide direction='left' triggerOnce={true}><h2>IT & VFX Solution</h2></Slide>
       </div>
 
       {isMobile ? (
         <div className='hello'>
-          <Fade direction='right'>
+          <Fade direction='right' triggerOnce={true}>
           <div className="ham">
             <label class="hamburger ham">
               <input className="checkbox-class" type="checkbox" checked={isMenuOpen} readOnly onClick={handleMenuToggle} />
@@ -88,7 +116,7 @@ const Navbar = () => {
           </AnimatePresence>
         </div>
       ) : (
-        <Fade direction='right' cascade>
+        <Fade direction='right' cascade triggerOnce={true}>
           <div className="nav-menu">
             <ul type="none" className="list">
               <li>
