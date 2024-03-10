@@ -1,6 +1,6 @@
 import React from 'react'
 import './HeroVideo.css'
-import { Bounce, Fade, Flip, Hinge, JackInTheBox, Rotate } from 'react-awesome-reveal'
+import { Fade, Flip } from 'react-awesome-reveal'
 import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -18,17 +18,28 @@ const HeroVideo = () => {
     if (inView) {
       const timer = setTimeout(() => {
         setShowHeading(true);
-      }, 1000);
+      }, 1500);
       return () => clearTimeout(timer);
     }
   }, [inView]);
   
   useEffect(()=>{
     const locomotiveScroll = new LocomotiveScroll();
-  },[])
+  })
 
   const scrollToSection = (sectionId) => {
     locomotiveScroll.scrollTo(`#${sectionId}`);
+  };
+
+  const renderFlipComponent = () => {
+    if (showHeading) {
+      return (
+        <Flip duration={1500} triggerOnce={true}>
+          <span className='gold'>X</span>
+        </Flip>
+      );
+    }
+    return null;
   };
   
 
@@ -45,10 +56,10 @@ const HeroVideo = () => {
       </h1>
       ):(
         <h1 className={`hv-h1 ${showHeading ? 'show' : ''}`} data-scroll>
-          <span data-scroll data-scroll-speed='1'>Welcome to</span>
-          <div className="part-2" data-scroll data-scroll-speed='0.5'>
+          <span data-scroll data-scroll-speed='0.5'>Welcome to</span>
+          <div className="part-2" data-scroll data-scroll-speed='0.3'>
             <span className='gold'>IT & VF</span>
-            <Flip delay={1500} triggerOnce={true}><span className='gold'>X</span></Flip>
+            {renderFlipComponent()}
           </div>
       </h1>
       )}

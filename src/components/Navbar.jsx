@@ -82,7 +82,7 @@ const Navbar = () => {
             {isMenuOpen && (
               <motion.div key={isMenuOpen ? 'menu-open' : 'menu-closed'} className={'fullnav-mob'} data-visible="true"
                 initial={{ opacity: 0, width: 0 }}
-                animate={{ opacity: 1, width: '70vw' }}
+                animate={{ opacity: 1, width: '70%' }}
                 exit={{ opacity: 0, width: 0 }}
                 transition={{ duration: 0.3 }}
               >
