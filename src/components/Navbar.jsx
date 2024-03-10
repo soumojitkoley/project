@@ -82,7 +82,7 @@ const Navbar = () => {
             {isMenuOpen && (
               <motion.div key={isMenuOpen ? 'menu-open' : 'menu-closed'} className={'fullnav-mob'} data-visible="true"
                 initial={{ opacity: 0, width: 0 }}
-                animate={{ opacity: 1, width: '70%' }}
+                animate={{ opacity: 1, width: '80%' }}
                 exit={{ opacity: 0, width: 0 }}
                 transition={{ duration: 0.3 }}
               >
@@ -90,19 +90,19 @@ const Navbar = () => {
                 <div className="nav-menu">
                   <ul type="none" className="list">
                     <li>
-                      {/* <NavLink onClick={handleMenuToggle} to="/" className="link"> */}
+                      <NavLink onClick={handleMenuToggle} to="/" className="link">
                       Home
-                      {/* </NavLink> */}
+                      </NavLink>
                     </li>
                     <li>
-                      {/* <NavLink onClick={handleMenuToggle} to="/about" className="link"> */}
+                      <NavLink onClick={handleMenuToggle} to="/about" className="link">
                       About
-                      {/* </NavLink> */}
+                      </NavLink>
                     </li>
                     <li>
-                      {/* <NavLink onClick={handleMenuToggle} to="/contact" className="link"> */}
+                      <NavLink onClick={handleMenuToggle} to="/contact" className="link">
                       Contact
-                      {/* </NavLink> */}
+                      </NavLink>
                     </li>
                   </ul>
                 </div>

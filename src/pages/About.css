@@ -1,0 +1,56 @@
+.about-page-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-video{
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.about-video video{
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: blur(0.5px);
+}
+
+.ap-h1{
+  position: absolute;
+  top:4em;
+  /* top: 58%; */
+  left: 0.5em;
+  font-size: 5em;
+}
+
+.ap-h2{
+  position: absolute;
+  top:11em;
+  /* top:70%; */
+  font-size: 2.5em;
+  left: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+  .ap-h1{
+    position: absolute;
+    top: 58%;
+    left: 0.35em;
+    font-size: 3em;
+  }
+  
+  .ap-h2{
+    position: absolute;
+    top:70%;
+    font-size: 2em;
+    left: 0.5em;
+  }
+}

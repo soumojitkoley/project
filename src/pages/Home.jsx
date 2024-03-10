@@ -9,23 +9,23 @@ import { useMediaQuery } from 'react-responsive';
 import { Fade } from 'react-awesome-reveal'
 
 const Home = () => {
-    const isMobile = useMediaQuery({ maxWidth: 1025 });
-    return (
-        <div>
-            <Navbar />
-            <HeroVideo />
-            {!isMobile ? (
-                <div className='bg1' id="target" data-scroll>
-                    <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you keeps me awake.\nDreaming of you keeps me asleep.\nBeing with you keeps me alive."}</Fade>
-                </div>
-            )
-                : (
-                    <div className='bg1' id="targetElementm" data-scroll>
-                        <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you\nkeeps me awake.\nDreaming of you\nkeeps me asleep.\nBeing with you\nkeeps me alive."}</Fade>
-                    </div>)
-            }
+  const isMobile = useMediaQuery({ maxWidth: 1025 });
+  return (
+    <div>
+      <Navbar />
+      <HeroVideo />
+      {!isMobile ? (
+        <div className='bg1' id="target" data-scroll>
+          <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you keeps me awake.\nDreaming of you keeps me asleep.\nBeing with you keeps me alive."}</Fade>
+        </div>
+      )
+        : (
+          <div className='bg1' id="targetElementm" data-scroll>
+            <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you\nkeeps me awake.\nDreaming of you\nkeeps me asleep.\nBeing with you\nkeeps me alive."}</Fade>
+          </div>)
+      }
 
-            {/* {!isMobile ? (
+      {/* {!isMobile ? (
         <ParallaxBanner
         layers={[
           {
@@ -44,11 +44,11 @@ const Home = () => {
           <h2>Thinking of you keeps me awake. Dreaming of you keeps me asleep. <br /> Being with you keeps me alive.</h2>
       </div>)} */}
 
-            <Slider />
-            <JoinNow />
-            <Footer />
-        </div>
-    )
+      <Slider />
+      <JoinNow />
+      <Footer />
+    </div>
+  )
 }
 
 export default Home

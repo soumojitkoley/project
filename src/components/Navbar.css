@@ -53,13 +53,20 @@
   justify-content: start;
   align-items: center;
   text-align: center;
-  background-color: #fff;
+  /* background-color: #fff; */
   background-size: cover;
   background-position: center;
-  color: #141414;
+  /* color: black; */
   padding: 5em 0px;
   gap: 10px;
   height: 105vh;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.2);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+/* border: 1px solid rgba(255, 255, 255, 0.3); */
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1607861876572-07754b7bba0d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); */
 }
 
@@ -77,12 +84,13 @@
 
 .link {
   text-decoration: none;
-  color: rgb(126, 125, 125);
+  color: rgb(28, 27, 27);
 }
 
 .link:hover,
 .active {
-  color: #d0cbcb;
+  color: #7c7c7c;
+  text-decoration: underline;
 }
 
 .auth-btns {
@@ -164,6 +172,16 @@
     flex-direction: column;
     gap: 0px;
     margin-top: 5em;
+  }
+
+  .link {
+    text-decoration: none;
+    color: rgb(117, 114, 114);
+  }
+  
+  .link:hover,
+  .active {
+    color: #111010;
   }
 
   .auth-btns {

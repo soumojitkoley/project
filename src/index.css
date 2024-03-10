@@ -7,7 +7,7 @@
 
 body{
   background-color: #242424;
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 body:before {
@@ -63,7 +63,7 @@ html[data-scroll-orientation="horizontal"] {
 }
 
 @media only screen and (max-width: 1025px) {
-  body{
+  /* body{
     overflow: visible;
-  }
+  } */
 }
