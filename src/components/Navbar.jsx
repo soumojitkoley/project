@@ -15,24 +15,24 @@ const Navbar = () => {
   const [lastScrollTop, setLastScrollTop] = useState(0);
 
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollTop = window.pageYOffset;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentScrollTop = window.pageYOffset;
 
-      if (currentScrollTop > lastScrollTop) {
-        setScrollDirection('down');
-      } else {
-        setScrollDirection('up');
-      }
+  //     if (currentScrollTop > lastScrollTop) {
+  //       setScrollDirection('down');
+  //     } else {
+  //       setScrollDirection('up');
+  //     }
 
-      setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
-    };
+  //     setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollTop]);
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [lastScrollTop]);
 
   useEffect(() => {
     const handleScroll = () => {

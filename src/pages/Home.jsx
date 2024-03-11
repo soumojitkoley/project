@@ -11,6 +11,7 @@ import { Fade } from 'react-awesome-reveal'
 const Home = () => {
   const isMobile = useMediaQuery({ maxWidth: 1025 });
   return (
+    <Fade delay={3000} duration={2000} triggerOnce={true}>
     <div>
       <Navbar />
       <HeroVideo />
@@ -48,6 +49,7 @@ const Home = () => {
       <JoinNow />
       <Footer />
     </div>
+    </Fade>
   )
 }
 

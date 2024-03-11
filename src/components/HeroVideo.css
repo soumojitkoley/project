@@ -162,7 +162,7 @@
   .hero-video-div {
     height: 100vh;
   }
-  video {
+  .hero-video-div video {
     height: 110%;
     position: absolute;
     top:0;
