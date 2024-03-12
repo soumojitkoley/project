@@ -60,7 +60,7 @@
 }
 
 .mouse {
-  z-index: 1;
+  /* z-index: -1; */
   bottom: 1em;
 	width: 30px;
 	height: 50px;
@@ -172,5 +172,9 @@
     left: 0.2em;
     font-size: 4em;
     display: block;
+  }
+
+  .part-1{
+	position: absolute;
   }
 }

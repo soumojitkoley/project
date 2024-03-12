@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useState, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Fade, Slide } from 'react-awesome-reveal'
+import { AppContext } from '../Context/AppContext';
 
 const Navbar = () => {
   const isMobile = useMediaQuery({ maxWidth: 1025 });
@@ -48,7 +50,14 @@ const Navbar = () => {
     };
   }, []);
 
+  let {setShowEntryAnimation} = useContext(AppContext)
+  
+  const handleSea = () => {
+    setShowEntryAnimation(true);
+  }
+
   const handleMenuToggle = () => {
+    
     setMenuOpen(!isMenuOpen);
 
     if (!isMenuOpen) {
@@ -58,14 +67,30 @@ const Navbar = () => {
     }
   };
 
+
+  const [show, setShow] = useState(false);
+  const { ref, inView } = useInView();
+  useEffect(() => {
+    if (inView) {
+      const timer = setTimeout(() => {
+        setShow(true)
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [inView]);
+
+
+
+
   return (
     // <div className={`navbar ${scrolling ? 'scrolled' : ''}`}>
-    <div className={`navbar ${scrollDirection === 'down' && 'hidden'} ${scrolling ? 'scrolled' : ''}`}>
+
+    <div className={`navbar ${scrollDirection === 'down' && 'hidden'} ${scrolling ? 'scrolled' : ''}`} ref={ref}>
       <div className="logo">
         <Slide direction='left' triggerOnce={true}><h2>IT & VFX Solution</h2></Slide>
       </div>
 
-      {isMobile ? (
+      {isMobile && show ? (
         <div className='hello'>
           <Fade direction='right' triggerOnce={true}>
           <div className="ham">
@@ -90,7 +115,7 @@ const Navbar = () => {
                 <div className="nav-menu">
                   <ul type="none" className="list">
                     <li>
-                      <NavLink onClick={handleMenuToggle} to="/" className="link">
+                      <NavLink onClick={() => { handleMenuToggle, handleSea()}} to="/" className="link">
                       Home
                       </NavLink>
                     </li>
@@ -116,7 +141,7 @@ const Navbar = () => {
           <div className="nav-menu">
             <ul type="none" className="list">
               <li>
-                <NavLink to="/" className="link">
+                <NavLink onClick={() => { handleMenuToggle, handleSea()}} to="/" className="link">
                 Home
                 </NavLink>
               </li>
@@ -134,7 +159,9 @@ const Navbar = () => {
           </div>
         </Fade>
       )}
+      
     </div>
+    
   );
 };
 

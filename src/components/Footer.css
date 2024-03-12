@@ -4,13 +4,13 @@
   color: #fff;
   padding: 5em;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  background-size: cover; /* Cover the entire footer area */
-  background-repeat: no-repeat; /* Don't repeat the image */
-  background-position: center; /* Center the image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-attachment: fixed;
   display: flex;
   flex-direction: column;
-  gap:5em;
+  gap: 5em;
 }
 
 .footer-upper {
@@ -19,7 +19,7 @@
   align-items: flex-start;
 }
 
-.footer-lower{
+.footer-lower {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -29,7 +29,6 @@
   font-size: 18px;
   color: #777777;
   font-family: "Noto Sans", sans-serif;
-  /* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 }
 
 .footer-desc {
@@ -42,14 +41,12 @@
   transition: 0.3s ease;
 }
 
-.quick-links{
+.quick-links {
   display: flex;
   flex-direction: column;
-  gap:5px;
+  gap: 5px;
   cursor: pointer;
 }
-
-
 
 .part {
   display: flex;
@@ -66,7 +63,6 @@
   gap: 10px;
 }
 
-
 .hovered {
   transition: all 0.3s ease-in;
   transform: scale(1.2);
@@ -77,10 +73,10 @@
   text-align: left;
 }
 
-.social-links{
+.social-links {
   display: flex;
   gap: 1em;
-  
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -91,29 +87,29 @@
   }
 
   .about-big-p {
-    width: 13em;
-    text-align: center;
+    width: 15em;
+    text-align:center;
+    padding: 1em;
   }
 
-  .footer-upper{
+  .footer-upper {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap:3em;
-  text-align: center;
+    gap: 3em;
+    text-align: center;
 
   }
 
   .address,
-.location {
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-}
+  .location {
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
 
-  .footer-lower{
+  .footer-lower {
     flex-direction: column;
-    /* justify-content: center; */
-    gap:3em;
+    gap: 3em;
   }
 }

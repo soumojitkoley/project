@@ -12,12 +12,12 @@
 
 .s-h1{
   text-align: center;
-  color: #141414;
+  color: #fffbfb;
   z-index: -1;
 }
 
 .mySwiper{
-  height: 35em;
+  height: 30em;
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
@@ -25,7 +25,7 @@
 }
 
 .mySwiper img {
-  height: 35em;
+  height: 30em;
   width: 100%;
   transition: transform 0.5s ease;
 }
@@ -34,6 +34,9 @@
   transform: scale(1.05);
 }
 
+/* .mySwiper .swiper-slide-active img {
+  transform: scale(3.3);
+} */
 
 .swiper-button-prev,
 .swiper-button-next {

@@ -3,6 +3,9 @@ import { Parallax, Navigation, Pagination, Autoplay, EffectFade, Keyboard } from
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Slide, Fade } from "react-awesome-reveal";
 import { useMediaQuery } from 'react-responsive';
+import { useEffect, useState } from "react";
+import { useInView } from 'react-intersection-observer';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -13,20 +16,33 @@ import './Slider.css'
 
 const Slider = () => {
   const isMobile = useMediaQuery({ maxWidth: 1025 });
+
+  const [show, setShow] = useState(false);
+  const { ref, inView } = useInView();
+  useEffect(() => {
+    if (inView) {
+      const timer = setTimeout(() => {
+        setShow(true)
+      }, 0);
+      return () => clearTimeout(timer);
+    }
+  }, [inView]);
+
+
   return (
-    <div className='slider-div'>
-      {isMobile ? (
+    <div className='slider-div' ref={ref}>
+      {isMobile && show ? (
         <Fade direction='up' delay={500} triggerOnce={true}><h1 className="s-h1">Our Gallery</h1></Fade>
       ) : (
         <Slide direction="left"><h1 className="s-h1">Our Gallery</h1></Slide>
       )}
 
-      {isMobile ? (
-        <Fade direction='up' delay={500} triggerOnce={true}>
+      {isMobile && show ? (
+        <Slide direction='up' delay={500} triggerOnce={true}>
           <Swiper
-            effect={'fade'}
-            spaceBetween={30}
-            slidesPerView={3}
+            effect={show ? "fade" : undefined}
+            spaceBetween={0}
+            slidesPerView={1}
             centeredSlides={true}
             loop={true}
             autoplay={{
@@ -57,11 +73,11 @@ const Slider = () => {
               <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
             </SwiperSlide>
           </Swiper>
-        </Fade>
+        </Slide>
       ) : (
         <Slide direction="right">
           <Swiper
-            effect={'fade'}
+            effect={show ? "fade" : undefined}
             spaceBetween={30}
             slidesPerView={3}
             centeredSlides={true}
