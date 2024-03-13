@@ -17,7 +17,7 @@ const HeroVideo = () => {
       const timer = setTimeout(() => {
         setShowHeading(true);
         setScrollButtonVisible(true)
-      }, 2000);
+      }, 2500);
       return () => clearTimeout(timer);
     }
   }, [inView]);
@@ -49,7 +49,7 @@ const HeroVideo = () => {
 
   return (
     <div className='hero-video-div' ref={ref}>
-      <Fade direction='up' duration={3000} className='hero-video-div' triggerOnce={true}>
+      <Fade direction='up' delay={100} duration={3000} className='hero-video-div' triggerOnce={true}>
         <video src="https://player.vimeo.com/progressive_redirect/playback/819940214/rendition/1080p/file.mp4?loc=external&signature=95920a1e74f71bb6bfcde53c30e8a8c932b331b0048822e31c190f853b1eb22c" type="video/mp4" autoPlay muted loop />
       </Fade>
       {isMobile ? (

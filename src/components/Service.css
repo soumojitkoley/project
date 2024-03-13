@@ -1,19 +1,21 @@
-.service-main-div{
-    width: 100%;
-    height: auto;
+.service-main-div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .parallax-section {
+  /* background: none; */
   object-fit: contain;
   pointer-events: none;
-  height: 500px;
+  height: 550px;
   width: 100%;
   background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
   text-align: center;
   position: relative;
 }
@@ -24,5 +26,51 @@
   left: 0;
   width: 100%;
   height: 100%;
+  color: #fff;
   background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+.h1-s{
+  font-size: 2.5em;
+}
+
+.service-list{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 1em;
+  padding: 0em 1em;
+  text-align: center;
+}
+
+.list-item{
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+}
+
+.p-s-1{
+  font-size: 1.7em;
+}
+
+.p-s-2{
+  padding: 0em 1em;
+  color: #afafaf;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .parallax-section{
+    height: 1400px;
+  }
+
+  .service-list{
+    flex-direction: column;
+    gap:3em;
+  }
 }
