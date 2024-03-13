@@ -21,7 +21,7 @@ const HeroVideo = () => {
         setShowHeading(true);
         setScrollButtonVisible(true)
         i++;
-      }, 6000);
+      }, 2000);
       return () => clearTimeout(timer);
     }
   }, [inView]);
@@ -40,14 +40,14 @@ const HeroVideo = () => {
       }
     }, 200);
   };
-  
-  if(showHeading == true) {
+
+  if (showHeading == true) {
     i++;
   }
 
   useEffect(() => {
     console.log(i)
-  },[i])
+  }, [i])
 
   const renderFlipComponent = () => {
     if (showHeading) {
@@ -57,12 +57,11 @@ const HeroVideo = () => {
         </Flip>
       );
     }
-    return null;
   };
 
   return (
     <div className='hero-video-div' ref={ref}>
-      <Fade direction='up' delay={ 5000} duration={2000} className='hero-video-div' triggerOnce={true}>
+      <Fade direction='up' duration={3000} className='hero-video-div' triggerOnce={true}>
         <video src="https://player.vimeo.com/progressive_redirect/playback/819940214/rendition/1080p/file.mp4?loc=external&signature=95920a1e74f71bb6bfcde53c30e8a8c932b331b0048822e31c190f853b1eb22c" type="video/mp4" autoPlay muted loop />
       </Fade>
       {/* <video src="/video/mov.mp4" autoPlay muted loop /> */}

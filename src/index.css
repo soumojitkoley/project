@@ -6,8 +6,6 @@
 }
 
 body{
-  /* z-index: -10; */
-  background-color: #242424;
   overflow:hidden;
 }
 
@@ -65,11 +63,11 @@ body:before {
 
 @media only screen and (max-width: 1025px) {
   body{
-    height: 100vh;
+    /* height: 100vh; */
     overflow: visible;
   }
   
-  body:before {
+  /* body:before {
     content: "";
     display: block;
     position: fixed;
@@ -85,5 +83,5 @@ body:before {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
+  } */
 }

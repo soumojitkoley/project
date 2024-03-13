@@ -1,8 +1,7 @@
 import './App.css'
 import { useState, useEffect } from 'react'
-import { Parallax, ParallaxBanner } from 'react-scroll-parallax'
 import { motion, AnimatePresence } from 'framer-motion';
-import { Routes ,Route, Outlet, Router } from 'react-router-dom'
+import { Routes ,Route, Outlet } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'

@@ -23,7 +23,7 @@ const Slider = () => {
     if (inView) {
       const timer = setTimeout(() => {
         setShow(true)
-      }, 0);
+      }, 1000);
       return () => clearTimeout(timer);
     }
   }, [inView]);
