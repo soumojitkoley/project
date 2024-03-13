@@ -1,19 +1,16 @@
 import './App.css'
-import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion';
 import { Routes ,Route, Outlet } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import LocomotiveScroll from 'locomotive-scroll';
-import { Fade } from 'react-awesome-reveal'
 import { useContext } from 'react';
 import { AppContext } from './Context/AppContext';
+import LocomotiveScroll from 'locomotive-scroll';
 const locomotiveScroll = new LocomotiveScroll();
 
 function App() {
   let {showEntryAnimation} = useContext(AppContext)
-  
 
   return (
     <div className={`app-main-div show-welcome ${showEntryAnimation ? 'entry-animation' : ''}`} data-scroll-container>
@@ -38,7 +35,7 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='*' element={<></>} />
         </Route>
-        </Routes>
+      </Routes>
     </div>
   )
 }

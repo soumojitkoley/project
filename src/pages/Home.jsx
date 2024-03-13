@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Navbar from '../components/Navbar'
 import HeroVideo from '../components/HeroVideo'
 import Slider from '../components/Slider'
@@ -9,6 +9,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Fade } from 'react-awesome-reveal'
 import { useEffect, useState } from 'react'
 import LocomotiveScroll from 'locomotive-scroll';
+import { AppContext } from '../Context/AppContext'
 const locomotiveScroll = new LocomotiveScroll();
   
 const Home = () => {
@@ -17,37 +18,32 @@ const Home = () => {
     const locomotiveScroll = new LocomotiveScroll();
   }, []);
 
-  const [show, setShow] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setShow(true);
-    }, 5000)
-  }, [])
+  let {showEntryAnimation} = useContext(AppContext)
 
   const isMobile = useMediaQuery({ maxWidth: 1025 });
   return (
     <div>
       {
-        show ? (
+        !showEntryAnimation ? (
           <>
             <Navbar />
             <HeroVideo />
           </>
         ) : 
-        (<div></div>)
+        (<></>)
       }
-      {!isMobile && show ? (
+      {!isMobile && !showEntryAnimation ? (
         <div className='bg1' id="target" data-scroll>
           <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you keeps me awake.\nDreaming of you keeps me asleep.\nBeing with you keeps me alive."}</Fade>
         </div>
       )     
-        : ( show ? (
+        : ( !showEntryAnimation ? (
           <div className='bg1' id="targetElementm" data-scroll>
             <Fade speed={500} cascade damping={0.1} triggerOnce={true}>{"Thinking of you\nkeeps me awake.\nDreaming of you\nkeeps me asleep.\nBeing with you\nkeeps me alive."}</Fade>
           </div>) : (<></>))
       }
       {
-        show ? (
+        !showEntryAnimation ? (
             <>
             <Service/>
             <Slider />

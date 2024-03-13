@@ -4,8 +4,6 @@ import { FaLocationDot, FaHouse, FaFacebook, FaInstagram, FaXTwitter, FaYoutube 
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
 
 const Footer = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
@@ -18,25 +16,12 @@ const Footer = () => {
 
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
-  const [show, setShow] = useState(false);
-  const { ref, inView } = useInView();
-  useEffect(() => {
-    if (inView) {
-      const timer = setTimeout(() => {
-        setShow(true)
-      }, 300);
-      return () => clearTimeout(timer);
-    }
-  }, [inView]);
-
   return (
-    <div className='footer-div' ref={ref}>
-      {show ? (
-        <>
-        <div className="footer-upper">
+    <div className='footer-div'>
+      <div className="footer-upper">
         <div className="part part1">
           <Fade direction='up'><p className='footer-heading'>About IT & VFX Solutions</p></Fade>
-          <Fade direction='up' delay={400} duration={2000}><p className='footer-desc about-big-p'>
+          <Fade direction='up' delay={400} duration={1000}><p className='footer-desc about-big-p'>
             IT & VFX is a full service visual effects and information technology(IT) company located in Kolkata. We offer our clients production work including Design, Editing, Animation, VFX for commercials, also we offer to design, develop websites and to make seamless software.
           </p></Fade>
         </div>
@@ -122,9 +107,6 @@ const Footer = () => {
           </Fade>
         </div>
       </div>
-      </>
-      ) : (<></>)}
-      
     </div>
   )
 }

@@ -1,26 +1,22 @@
-import React, { useEffect, useState, useRef } from 'react';
-import './HeroVideo.css'
+import React, { useEffect, useState } from 'react';
 import { Fade, Flip } from 'react-awesome-reveal'
 import { useMediaQuery } from 'react-responsive';
 import { useInView } from 'react-intersection-observer';
 import LocomotiveScroll from 'locomotive-scroll';
 const locomotiveScroll = new LocomotiveScroll();
+import './HeroVideo.css'
 
 const HeroVideo = () => {
   const isMobile = useMediaQuery({ maxWidth: 1025 });
   const [showHeading, setShowHeading] = useState(false);
-  const [showHeadingd, setShowHeadingd] = useState(false);
   const [scrollButtonVisible, setScrollButtonVisible] = useState(false);
   const { ref, inView } = useInView();
-  const isFirstRender = useRef(true);
-  let i = 0;
 
   useEffect(() => {
     if (inView) {
       const timer = setTimeout(() => {
         setShowHeading(true);
         setScrollButtonVisible(true)
-        i++;
       }, 2000);
       return () => clearTimeout(timer);
     }
@@ -41,18 +37,10 @@ const HeroVideo = () => {
     }, 200);
   };
 
-  if (showHeading == true) {
-    i++;
-  }
-
-  useEffect(() => {
-    console.log(i)
-  }, [i])
-
   const renderFlipComponent = () => {
     if (showHeading) {
       return (
-        <Flip duration={2500} triggerOnce={true}>
+        <Flip duration={2000} triggerOnce={true}>
           <span className='gold'>X</span>
         </Flip>
       );
@@ -64,7 +52,6 @@ const HeroVideo = () => {
       <Fade direction='up' duration={3000} className='hero-video-div' triggerOnce={true}>
         <video src="https://player.vimeo.com/progressive_redirect/playback/819940214/rendition/1080p/file.mp4?loc=external&signature=95920a1e74f71bb6bfcde53c30e8a8c932b331b0048822e31c190f853b1eb22c" type="video/mp4" autoPlay muted loop />
       </Fade>
-      {/* <video src="/video/mov.mp4" autoPlay muted loop /> */}
       {isMobile ? (
         <h1 className={`hv-h1 ${showHeading ? 'show' : ''}`}>
           <span data-scroll data-scroll-speed='0.8'>Welcome to </span>
@@ -83,7 +70,6 @@ const HeroVideo = () => {
         </h1>
       )}
       {isMobile && scrollButtonVisible ? (<div onClick={() => scrollToSection('targetElementm', 80)} className="scroll"></div>) : (scrollButtonVisible ? (<div onClick={() => scrollToSection('target')} className="mouse"></div>) : (<></>))}
-
     </div>
   )
 }
