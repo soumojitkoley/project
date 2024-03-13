@@ -74,3 +74,14 @@
     gap:3em;
   }
 }
+
+@media only screen and (max-width: 1025px) and (orientation: landscape) {
+  .parallax-section{
+    height: 900px;
+  }
+
+  .service-list{
+    flex-direction: column;
+    gap:3em;
+  }
+}
