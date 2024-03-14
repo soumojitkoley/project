@@ -49,7 +49,7 @@ const Navbar = () => {
     };
   }, []);
 
-  let {setShowEntryAnimation} = useContext(AppContext)
+  let {setShowEntryAnimation, navOpen} = useContext(AppContext)
   
   const handleSea = () => {
     setShowEntryAnimation(true);
@@ -67,22 +67,10 @@ const Navbar = () => {
   };
 
 
-  // const [show, setShow] = useState(false);
-  // const { ref, inView } = useInView();
-  // useEffect(() => {
-  //   if (inView) {
-  //     const timer = setTimeout(() => {
-  //       setShow(true)
-  //     }, 100);
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [inView]);
-
-
 
 
   return (
-    <div className={`navbar ${scrolling ? 'scrolled' : ''}`} >
+    <div className={`navbar ${scrolling ? 'scrolled' : ''} ${ !navOpen ? 'hidden' : ''}`} >
       <div className="logo">
         <Slide direction='left' triggerOnce={true}><h2>IT & VFX Solution</h2></Slide>
       </div>

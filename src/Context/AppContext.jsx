@@ -4,6 +4,7 @@ export const AppContext = createContext()
 
 export default function AppContextProvider({ children }) {
   const [showEntryAnimation, setShowEntryAnimation] = useState(true);
+  const [navOpen, setNavOpen] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -12,10 +13,11 @@ export default function AppContextProvider({ children }) {
     return () => clearTimeout(timer);
   }, [showEntryAnimation]);
 
-
   const value = {
     showEntryAnimation,
-    setShowEntryAnimation
+    setShowEntryAnimation,
+    navOpen,
+    setNavOpen
   }
 
   return (
