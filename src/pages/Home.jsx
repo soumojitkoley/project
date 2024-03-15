@@ -5,6 +5,7 @@ import Slider from '../components/Slider'
 import JoinNow from '../components/JoinNow'
 import Footer from '../components/Footer'
 import Service from '../components/Service'
+import ContactUs from '../components/ContactUs'
 import { useMediaQuery } from 'react-responsive';
 import { Fade } from 'react-awesome-reveal'
 import { useEffect, useState } from 'react'
@@ -48,6 +49,7 @@ const Home = () => {
             <Service/>
             <Slider />
             <JoinNow />
+            <ContactUs/>
             <Footer />
             </>
         ) :

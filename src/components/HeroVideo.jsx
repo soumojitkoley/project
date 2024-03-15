@@ -50,7 +50,7 @@ const HeroVideo = () => {
   return (
     <div className='hero-video-div' ref={ref}>
       <Fade direction='up' delay={100} duration={3000} className='hero-video-div' triggerOnce={true}>
-        <video src="https://player.vimeo.com/progressive_redirect/playback/819940214/rendition/1080p/file.mp4?loc=external&signature=95920a1e74f71bb6bfcde53c30e8a8c932b331b0048822e31c190f853b1eb22c" type="video/mp4" autoPlay muted loop />
+        <video src="/video/hero.mp4" type="video/mp4" autoPlay muted loop />
       </Fade>
       {isMobile ? (
         <h1 className={`hv-h1 ${showHeading ? 'show' : ''}`}>
