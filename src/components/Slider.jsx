@@ -22,7 +22,7 @@ import './Slider.css'
 import { AppContext } from "../Context/AppContext";
 
 const Slider = () => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useMediaQuery({ maxWidth: 760 });
   const [open, setOpen] = useState(false);
   const zoomRef = useRef(null);
 
