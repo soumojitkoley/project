@@ -11,6 +11,7 @@ export default function AppContextProvider({ children }) {
   useEffect(() => {
     const isHomePage = location.pathname === '/';
     setShowEntryAnimation(isHomePage);
+    window.scrollTo(0, 0);
     return () => clearTimeout(5000);
   }, [location]);
 
@@ -20,7 +21,7 @@ export default function AppContextProvider({ children }) {
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [showEntryAnimation]);
 
   const value = {
     showEntryAnimation,
