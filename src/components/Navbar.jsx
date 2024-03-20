@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,29 +11,6 @@ const Navbar = () => {
   const isMobile = useMediaQuery({ maxWidth: 1025 });
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-
-  // const [scrollDirection, setScrollDirection] = useState('none');
-  // const [lastScrollTop, setLastScrollTop] = useState(0);
-
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentScrollTop = window.pageYOffset;
-
-  //     if (currentScrollTop > lastScrollTop) {
-  //       setScrollDirection('down');
-  //     } else {
-  //       setScrollDirection('up');
-  //     }
-
-  //     setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [lastScrollTop]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,9 +33,7 @@ const Navbar = () => {
   }
 
   const handleMenuToggle = () => {
-    
     setMenuOpen(!isMenuOpen);
-
     if (!isMenuOpen) {
       document.body.classList.add('overflow-hidden');
     } else {
@@ -66,15 +41,17 @@ const Navbar = () => {
     }
   };
 
-
-
-
   return (
     <div className={`navbar ${scrolling ? 'scrolled' : ''} ${ !navOpen ? 'hidden' : ''}`} >
       <div className="logo">
-        <Slide direction='left' triggerOnce={true}><h2>IT & VFX Solution</h2></Slide>
+        <Slide direction='left' triggerOnce={true}>
+          <h2>
+            <Link onClick={() => { handleMenuToggle, handleSea()}} to="/" className='h2-navbar'>
+              IT & VFX Solution
+            </Link>
+          </h2>
+        </Slide>
       </div>
-
       {isMobile ? (
         <div className='hello'>
           <Fade direction='right' triggerOnce={true}>
@@ -91,9 +68,9 @@ const Navbar = () => {
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div key={isMenuOpen ? 'menu-open' : 'menu-closed'} className={'fullnav-mob'} data-visible="true"
-                initial={{ opacity: 0, width: 0 }}
-                animate={{ opacity: 1, width: '80%' }}
-                exit={{ opacity: 0, width: 0 }}
+                initial={{ opacity: 0  }}
+                animate={{ opacity: 1}}
+                exit={{ opacity: 0  }}
                 transition={{ duration: 0.3 }}
               >
                 <Fade direction='up'>
