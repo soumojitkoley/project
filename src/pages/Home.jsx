@@ -48,7 +48,7 @@ const Home = () => {
             <>
             <Service/>
             <Slider />
-            <JoinNow />
+            {/* <JoinNow /> */}
             <ContactUs/>
             <Footer />
             </>

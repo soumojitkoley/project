@@ -1,21 +1,21 @@
 .tools-main-div{
   width: 100%;
-  background-color: #e8e8e8;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 3em;
   padding: 2em 0em;
 }
 
 .infinity-scroll{
   display: flex;
-  gap: 3em;
+  gap: 7em;
 }
 
 .images{
   width: 5em;
   height: 5em;
 }
-.last-image{
-  margin-left: 3em;
+.first-image{
+  margin-left: 7em;
 }

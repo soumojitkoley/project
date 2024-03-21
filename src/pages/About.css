@@ -44,7 +44,7 @@
 .our-story{
   width: 100%;
   height: auto;
-  background-color: #e8e8e8;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,12 +80,15 @@
   justify-content: center;
   align-items: center;
   height: 25em;
-  width: 40em;
+  width: 100%;
+
 }
 
 .os-image-part img{
-  height: 25em;
-  width: 40em;
+  /* height: 25em;
+  width: 40em; */
+  height: 100%; 
+  width: 45vw;
   padding: 0em 1em;
 }
 

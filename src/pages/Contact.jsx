@@ -7,6 +7,7 @@ import Tools from '../components/Tools'
 import People from '../components/People'
 import ContactUs from '../components/ContactUs'
 import JobForm from '../forms/JobForm'
+import ContactForm from '../forms/ContactForm'
 import { Fade } from 'react-awesome-reveal'
 import { useMediaQuery } from 'react-responsive'
 import LocomotiveScroll from 'locomotive-scroll';
@@ -30,20 +31,19 @@ const Contact = () => {
     }, 200);
   };
 
-
   const isMobile = useMediaQuery({ maxWidth: 1025 });
 
   return (
     <div className='about-page-div'>
       <Navbar />
       <div className='about-video'>
-        <video src="/video/about-hero.mp4" autoPlay muted loop />
+        <video src="/video/hero-video.mp4" autoPlay muted loop />
         <div className='about-heading'>
           <h1 className='ap-h1' data-scroll data-scroll-speed='0.5' >
-            <Fade direction='left' duration={2000} triggerOnce={true}>Contact</Fade>
+            <Fade direction='down' duration={2000}>Contact</Fade>
           </h1>
-          <h2 className='ap-h2' data-scroll data-scroll-speed='0.3' triggerOnce={true}>
-            <Fade direction='left' duration={2000} triggerOnce={true}>
+          <h2 className='ap-h2' data-scroll data-scroll-speed='0.3'>
+            <Fade direction='down' duration={2000}>
               <div>Get in touch with us</div>
               <div>let's connect and create together</div>
             </Fade>
@@ -66,8 +66,7 @@ const Contact = () => {
       </div>
       <People />
       <Tools />
-      <JobForm/>
-      <ContactUs/>
+      <ContactForm/>
       <JoinNow />
       <Footer />
     </div>

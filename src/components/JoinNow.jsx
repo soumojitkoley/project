@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Fade } from 'react-awesome-reveal'
 import { useMediaQuery } from 'react-responsive';
 import LocomotiveScroll from 'locomotive-scroll';
@@ -7,6 +7,16 @@ import './JoinNow.css'
 
 const JoinNow = () => {
   const isMobile = useMediaQuery({ maxWidth: 1025 });
+
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [applyHovered, setApplyHovered] = useState(false);
+
+  function handleFormSubmit() {
+    const googleFormUrl = 'https://forms.gle/g12HTSPmAEjNuze87';
+    const newTab = window.open(googleFormUrl, '_blank');
+    setApplyHovered(true)
+    setFormSubmitted(true);
+  }
 
   return (
     <div className='join-main-div'>
@@ -19,14 +29,15 @@ const JoinNow = () => {
         <Fade delay={500} direction='right' duration={1500} >
           <div className='apply-part'>
             <h1 className='h1-jn'>Join the team</h1>
-            <a class="swipe">Apply today
+            <button class={`swipe ${applyHovered ? 'apply-hovered' : ''}`} id="applyButton" onClick={handleFormSubmit} disabled={formSubmitted}>
+            {formSubmitted ? 'SUBMITTED' : 'Apply Now'}
               <span class="container">
                 <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
                 </svg>
               </span>
-            </a>
+            </button>
           </div>
         </Fade>
       </>) : (<></>)}
@@ -40,14 +51,15 @@ const JoinNow = () => {
           <Fade delay={100} direction='up' duration={1500} > */}
             <div className='apply-part'>
               <h1 className='h1-jn'>Join the team</h1>
-              <a class="swipe">Apply today
+              <button class={`swipe ${applyHovered ? 'apply-hovered' : ''}`} id="applyButton" onClick={handleFormSubmit} disabled={formSubmitted}>
+              {formSubmitted ? 'SUBMITTED' : 'Apply Now'}
                 <span class="container">
                   <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 0h24v24H0z" fill="none"></path>
                     <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z" fill="currentColor"></path>
                   </svg>
                 </span>
-              </a>
+              </button>
             </div>
           </Fade>
         </>
