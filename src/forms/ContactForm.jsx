@@ -31,7 +31,8 @@ const ContactForm = () => {
       .then(
         () => {
           toast.success('Form Submitted Successfully!')
-          console.log('SUCCESS!');
+          setFormSubmitted(true)
+          console.log('SUCCESS!')
         },
         (error) => {
           toast.error("Something went wrong")
@@ -78,7 +79,7 @@ const ContactForm = () => {
           <textarea name="message" class="input" type="email"  placeholder="" required />
           <span>Enter your message here</span>
         </label>
-        <button class="submit" value="Send">Submit</button>
+        <button class="submit" value="Send" disabled={formSubmitted}>Submit</button>
         <Toaster
         position="bottom-center"
         reverseOrder={false}

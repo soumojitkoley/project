@@ -18,6 +18,10 @@ const People = () => {
     }
   }, []);
 
+  const handleContactClick = (email) => {
+    window.location.href = `mailto:${email}`;
+  };
+
   return (
     <div className='people-main-div'>
       <div className="people-title">
@@ -25,7 +29,7 @@ const People = () => {
       </div>
       <div className="people-image-part">
         {team.map((perPerson) => (
-          <div className="flip-card" key={perPerson.id}>
+          <div className="flip-card" key={perPerson.id} onClick={team.length === 2 ? ()=> handleContactClick(perPerson.email) : null}>
             <div className="flip-card-inner">
               <div className="flip-card-front">
                 <Fade delay={500} duration={1500}>

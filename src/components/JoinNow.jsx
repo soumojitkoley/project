@@ -12,7 +12,7 @@ const JoinNow = () => {
   const [applyHovered, setApplyHovered] = useState(false);
 
   function handleFormSubmit() {
-    const googleFormUrl = 'https://forms.gle/g12HTSPmAEjNuze87';
+    const googleFormUrl = 'https://forms.gle/qedJcUoQ1YciumQGA';
     const newTab = window.open(googleFormUrl, '_blank');
     setApplyHovered(true)
     setFormSubmitted(true);
