@@ -36,7 +36,7 @@ const About = () => {
     <div className='about-page-div'>
       <Navbar />
       <div className='about-video'>
-        <video src="/video/about-hero.mp4" autoPlay muted loop />
+        <video src="/video/about-hero.m4v" autoPlay muted loop />
         <div className='about-heading'>
           <h1 className='ap-h1' data-scroll data-scroll-speed='0.5' >
             <Fade direction='left' duration={2000} triggerOnce={true}>About</Fade>

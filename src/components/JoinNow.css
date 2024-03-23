@@ -99,9 +99,14 @@
   padding-right: 40px;
 }
 
+.swipe.apply-hovered{
+  cursor: not-allowed;
+}
+
 .swipe.apply-hovered .container {
   left: calc(100% - 55px);
   color: #fff;
+  cursor: not-allowed;
 }
 
 
@@ -135,9 +140,6 @@
     width: 400px;
   }
 }
-
-
-
 
 /* ipad */
 

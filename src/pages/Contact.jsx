@@ -35,7 +35,7 @@ const Contact = () => {
     <div className='about-page-div'>
       <Navbar />
       <div className='about-video'>
-        <video src="/video/hero-video.mp4" autoPlay muted loop />
+        <video src="/video/contact-hero.m4v" autoPlay muted loop />
         <div className='about-heading'>
           <h1 className='ap-h1' data-scroll data-scroll-speed='0.5' >
             <Fade direction='down' duration={2000}>Contact</Fade>

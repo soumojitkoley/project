@@ -11,7 +11,7 @@ const data = [
     name: "Saheli Majumdar",
     role: "Paint Artist",
     bio: "Creative and skilled Paint Artist adept at using various digital painting techniques to enhance and refine visual elements in films and TV shows. Proficient in digital painting software, with a keen eye for detail and a passion for bringing scenes to life through color and texture.",
-    src: ""
+    src: "/peopleImage/2.png"
   },
   {
     id: 3,

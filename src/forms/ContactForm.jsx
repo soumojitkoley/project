@@ -79,7 +79,7 @@ const ContactForm = () => {
           <textarea name="message" class="input" type="email"  placeholder="" required />
           <span>Enter your message here</span>
         </label>
-        <button class="submit" value="Send" disabled={formSubmitted}>Submit</button>
+        <button class={`submit ${formSubmitted ? 'cf-disabled' : ''}`} value="Send" disabled={formSubmitted}>Submit</button>
         <Toaster
         position="bottom-center"
         reverseOrder={false}

@@ -9,8 +9,8 @@ const Service = () => {
   return (
     <div className='service-main-div'>
       <Fade duration={1000}>
-          <div className="parallax-section">
-          <video src="/video/new.mp4" type="video/mp4" autoPlay muted loop />
+        <div className="parallax-section">
+          <video src="/video/service-bg.m4v" autoPlay muted loop />
           <div className="parallax-overlay">
             <Slide direction="right" dealy={200} duration={1500}>
               <h1 className='h1-s'>Our Services</h1>
@@ -18,31 +18,32 @@ const Service = () => {
             <div className="service-list">
               <Fade direction='up' delay={200} duration={1500}>
                 <div className="list-item">
-                  <p className='p-s-1'>Animation & VFX</p>
-                  <p className='p-s-2'>We specialize in creating stunning visual effects and animations that bring your ideas to life. From concept development to post-production, we deliver high-quality animation and VFX solutions for your projects.</p>
+                  <p className='p-s-1'>Pre-Wedding Photography</p>
+                  <p className='p-s-2'>Our pre-wedding photography services capture the beauty and intimacy of your relationship. Whether it's a romantic walk in the park or a cozy date night at home, we will work with you to create a memorable experience.</p>
                 </div>
+
               </Fade>
               <Fade direction='down' delay={200} duration={1500}>
                 <div className="list-item">
-                  <p className='p-s-1'>Graphic Design</p>
-                  <p className='p-s-2'>Our graphic design services encompass a wide range of creative solutions, including logo design, branding, print materials, and digital graphics. We combine artistic vision with technical expertise to create visually appealing designs that effectively communicate your message.</p>
+                  <p className='p-s-1'>Wedding Photography</p>
+                  <p className='p-s-2'>We believe that the best photographs come from capturing genuine emotions. That’s why we work hard to create a magical tale of your love and commitment in the most creative way.</p>
                 </div>
               </Fade>
               <Fade direction='up' delay={200} duration={1500}>
                 <div className="list-item">
-                  <p className='p-s-1'>Web Developement</p>
-                  <p className='p-s-2'>With expertise in a variety of programming languages and frameworks, we develop custom websites and web applications tailored to your specific needs. Whether you need an e-commerce platform, a content management system, or a custom web solution, we have the skills to make it happen.</p>
+                  <p className='p-s-1'>Wedding Videography</p>
+                  <p className='p-s-2'>Capture magical memories of your wedding day with exquisite wedding videographer in Kolkata. From joyful vows to heartfelt celebrations, we spell magic to your special moments that you will cherish forever. </p>
                 </div>
               </Fade>
               <Fade direction='down' delay={200} duration={1500}>
                 <div className="list-item">
-                  <p className='p-s-1'>Web Design</p>
-                  <p className='p-s-2'>Our web design services focus on creating user-friendly, aesthetically pleasing interfaces that enhance the overall user experience. We employ modern design principles and responsive techniques to ensure your website looks great and functions flawlessly across all devices.</p>
+                  <p className='p-s-1'>Photo & <br/> Video Editing(VFX)</p>
+                  <p className='p-s-2'>We offer tailored editing services, from basic adjustments to advanced effects. Our skilled editors use the latest tools to ensure your content stands out. Trust us to transform your footage and images into polished masterpieces.</p>
                 </div>
               </Fade>
             </div>
           </div>
-          </div>
+        </div>
       </Fade>
     </div>
   )
