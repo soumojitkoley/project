@@ -4,6 +4,7 @@ import { Routes ,Route, Outlet } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Reviews from './pages/Reviews';
 import { useContext } from 'react';
 import { AppContext } from './Context/AppContext';
 import LocomotiveScroll from 'locomotive-scroll';
@@ -33,6 +34,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/reviews' element={<Reviews/>}/>
           <Route path='*' element={<></>} />
         </Route>
       </Routes>

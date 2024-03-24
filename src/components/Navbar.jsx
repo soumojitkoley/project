@@ -26,8 +26,8 @@ const Navbar = () => {
     };
   }, []);
 
-  let {setShowEntryAnimation, navOpen} = useContext(AppContext)
-  
+  let { setShowEntryAnimation, navOpen } = useContext(AppContext)
+
   const handleSea = () => {
     setShowEntryAnimation(true);
   }
@@ -42,11 +42,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`navbar ${scrolling ? 'scrolled' : ''} ${ !navOpen ? 'hidden' : ''}`} >
+    <div className={`navbar ${scrolling ? 'scrolled' : ''} ${!navOpen ? 'hidden' : ''}`} >
       <div className="logo">
         <Slide direction='left' triggerOnce={true}>
           <h2>
-            <Link onClick={() => { handleMenuToggle, handleSea()}} to="/" className='h2-navbar'>
+            <Link onClick={() => { handleMenuToggle, handleSea() }} to="/" className='h2-navbar'>
               IT & VFX Solution
             </Link>
           </h2>
@@ -55,44 +55,49 @@ const Navbar = () => {
       {isMobile ? (
         <div className='hello'>
           <Fade direction='right' triggerOnce={true}>
-          <div className="ham">
-            <label class="hamburger ham">
-              <input className="checkbox-class" type="checkbox" checked={isMenuOpen} readOnly onClick={handleMenuToggle} />
-              <svg viewBox="0 0 32 32">
-                <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
-                <path class="line" d="M7 16 27 16"></path>
-              </svg>
-            </label>
-          </div>
+            <div className="ham">
+              <label class="hamburger ham">
+                <input className="checkbox-class" type="checkbox" checked={isMenuOpen} readOnly onClick={handleMenuToggle} />
+                <svg viewBox="0 0 32 32">
+                  <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                  <path class="line" d="M7 16 27 16"></path>
+                </svg>
+              </label>
+            </div>
           </Fade>
           <AnimatePresence>
             {isMenuOpen && (
               <motion.div key={isMenuOpen ? 'menu-open' : 'menu-closed'} className={'fullnav-mob'} data-visible="true"
-                initial={{ opacity: 0  }}
-                animate={{ opacity: 1}}
-                exit={{ opacity: 0  }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
                 <Fade direction='up'>
-                <div className="nav-menu">
-                  <ul type="none" className="list">
-                    <li>
-                      <NavLink onClick={() => { handleMenuToggle, handleSea()}} to="/" className="link">
-                      Home
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink onClick={handleMenuToggle} to="/about" className="link">
-                      About
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink onClick={handleMenuToggle} to="/contact" className="link">
-                      Contact
-                      </NavLink>
-                    </li>
-                  </ul>
-                </div>
+                  <div className="nav-menu">
+                    <ul type="none" className="list">
+                      <li>
+                        <NavLink onClick={() => { handleMenuToggle, handleSea() }} to="/" className="link">
+                          Home
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink onClick={handleMenuToggle} to="/about" className="link">
+                          About
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink onClick={handleMenuToggle} to="/reviews" className="link">
+                          Reviews
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink onClick={handleMenuToggle} to="/contact" className="link">
+                          Contact
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
                 </Fade>
               </motion.div>
             )}
@@ -103,27 +108,32 @@ const Navbar = () => {
           <div className="nav-menu">
             <ul type="none" className="list">
               <li>
-                <NavLink onClick={() => { handleMenuToggle, handleSea()}} to="/" className="link">
-                Home
+                <NavLink onClick={() => { handleMenuToggle, handleSea() }} to="/" className="link">
+                  Home
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/about" className="link">
-                About
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink onClick={handleMenuToggle} to="/reviews" className="link">
+                  Reviews
                 </NavLink>
               </li>
               <li>
                 <NavLink to="/contact" className="link">
-                Contact
+                  Contact
                 </NavLink>
               </li>
             </ul>
           </div>
         </Fade>
       )}
-      
+
     </div>
-    
+
   );
 };
 

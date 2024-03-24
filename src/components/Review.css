@@ -1,0 +1,126 @@
+.review-main-div{
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  padding: 2em 0em;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap:3em;
+  background-image: url(https://i.pinimg.com/originals/bc/fa/27/bcfa277eaa73a8981aa411fcb7633c8d.jpg);
+}
+
+.top-part{
+  width: 100%;
+  display: flex;
+  padding: 0em 5em;
+  justify-content: center;
+  align-items: center;
+  gap:3em;
+  color: #002642;
+  font-style: italic;
+}
+
+.top-image-part{
+  width: 250px;
+  height: 250px;
+  border-radius:50%;
+  overflow: hidden;
+}
+
+.top-image-part img,
+.top-image-part-small img,
+.bottom-image-part img{
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s ease;
+  object-fit: contain;
+}
+
+.top-image-part img:hover,
+.top-image-part-small img:hover,
+.bottom-image-part img:hover{
+  transform: scale(1.2);
+}
+
+.top-review-part{
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+}
+
+.top-cmt-part{
+  width: 40em;
+}
+
+.top-image-part-small-div{
+  display: flex;
+  justify-content: left;
+  align-items: center;  
+  gap:1em;
+}
+
+.top-image-part-small,.bottom-image-part{
+  width: 50px;
+  height: 50px;
+  border-radius:50%;
+  overflow: hidden;
+}
+
+.bottom-part{
+  display: flex;
+  justify-content: space-evenly;
+  gap:5em;
+  padding: 2em;
+  color: #002642;
+  font-style: italic;
+}
+
+.per-review{
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+  width: 350px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-image: url(https://img.freepik.com/free-vector/line-style-hand-drawn-abstract-botanical-flower-wedding-banner_1017-44705.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.last-review{
+  margin-right: 1em;
+}
+
+.bottom-review-wrapper{
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+}
+
+
+.bottom-image-name{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap:1.5em;
+}
+
+@media only screen and (max-width: 700px) {
+
+  .review-main-div{
+    padding: 0;
+  }
+
+  .top-part{
+    flex-direction: column;
+    padding: 0em 2em;
+  }
+
+  .top-cmt-part{
+    width: 15em;
+  }
+}

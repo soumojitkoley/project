@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import data from '../data/details.js';
+import data from '../data/peopleData.js';
 import './People.css';
 import { Fade } from 'react-awesome-reveal';
 import { useLocation } from "react-router-dom";
