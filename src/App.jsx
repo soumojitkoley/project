@@ -4,7 +4,9 @@ import { Routes ,Route, Outlet } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
-import Reviews from './pages/Reviews';
+import Reviews from './pages/Reviews'
+import Phone from './components/Phone'
+import Whatsapp from './components/Whatsapp'
 import { useContext } from 'react';
 import { AppContext } from './Context/AppContext';
 import LocomotiveScroll from 'locomotive-scroll';
@@ -29,6 +31,15 @@ function App() {
       ) : (
         <></>
       )}
+      {
+        !showEntryAnimation ? (
+          <>
+            <Phone/>
+            <Whatsapp/>
+          </>
+        ) : 
+        (<></>)
+      }
       <Routes>
         <Route path='/' element={<Outlet />} >
           <Route index element={<Home />} />

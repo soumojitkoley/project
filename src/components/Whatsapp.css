@@ -1,0 +1,36 @@
+.wp-main-div {
+  position: fixed;
+  z-index: 2000;
+  bottom: 1em;
+  right: 1em;
+}
+
+.wp-wrapper {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+}
+
+.wp-wrapper img {
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  bottom: 1em;
+  right: 1em;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
