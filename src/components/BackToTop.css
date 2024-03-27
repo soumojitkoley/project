@@ -1,0 +1,62 @@
+.btt-btn{
+  position: fixed;
+  z-index: 2000;
+  bottom: 1em;
+  right: 4em;
+}
+
+.Btn {
+  width: 40px;
+  height: 40px;
+  background:#514f4f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  transition: 0.5S ease;
+}
+
+.arrow path {
+  fill: white;
+}
+
+.text-btt {
+  font-size: 0.7em;
+  width: 100px;
+  position: absolute;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -18px;
+  opacity: 0;
+  transition-duration: .7s;
+}
+
+.Btn:hover{
+  transform: scale(1.1);
+}
+
+.Btn:hover .text-btt {
+  opacity: 1;
+  transition-duration: .7s;
+}
+
+.Btn:hover .arrow {
+  animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

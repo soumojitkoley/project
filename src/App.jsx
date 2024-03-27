@@ -7,6 +7,7 @@ import Contact from './pages/Contact'
 import Reviews from './pages/Reviews'
 import Phone from './components/Phone'
 import Whatsapp from './components/Whatsapp'
+import BackToTop from './components/BackToTop';
 import { useContext } from 'react';
 import { AppContext } from './Context/AppContext';
 import LocomotiveScroll from 'locomotive-scroll';
@@ -36,6 +37,7 @@ function App() {
           <>
             <Phone/>
             <Whatsapp/>
+            <BackToTop/>
           </>
         ) : 
         (<></>)
